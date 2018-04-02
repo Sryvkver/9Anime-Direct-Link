@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/boot.css")
+        title Response
+    body
+        p(style="margin: 5px 5px 5px 5px;") Directlink: #{directLink}
+        form(action='http://192.168.2.137:8080/jsonrpc?request={"jsonrpc":"2.0","id":1,"method":"Player.Open","params":{"item":{"file":"'+directLink+'"}}}')
+            button(style="margin: 5px 5px 20px 5px;" type="submit") Play to Kodi
+        a(style="margin: 5px 5px 20px 5px;" href="/" class="button") Home
