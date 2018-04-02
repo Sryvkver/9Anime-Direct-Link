@@ -44,7 +44,7 @@ let playBtnSelector = '#player > div.cover';
 let iframeSelector = '#player > iframe';
 function chromeGoto(url){
     return new Promise(async resolve => {
-        const browser = await chrome.launch();
+        const browser = await chrome.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
         const page = await browser.newPage();
         //Disable Picture loading
         await page.setRequestInterception(true);
